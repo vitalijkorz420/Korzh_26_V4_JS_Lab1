@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скласти програму розкладу числа на прості множники.</title>
+</head>
+<body>
+    <script>
+ function primeFactorization(number) {
+    let factors = []; 
+    let index = 0; 
+    while (number % 2 === 0) {
+      factors[index++] = 2;
+      number /= 2;
+    }
+    for (let i = 3; i <= Math.sqrt(number); i += 2) {
+      while (number % i === 0) {
+        factors[index++] = i;
+        number /= i;
+      }
+    }
+    if (number > 2) {
+      factors[index] = number;
+    }
+    return factors; 
+  }
+  let x = parseInt(prompt("Введи ціле число:"));
+  let result = primeFactorization(x);
+  alert("Результат розкладання числа " + x + " на прості множники: " + result.join(", "));
+    </script>
+</body>
+</html>

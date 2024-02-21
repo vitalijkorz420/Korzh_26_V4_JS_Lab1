@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Знайти НСК двох двоцифрових натуральних чисел.</title>
+</head>
+<body>
+    <script>
+     function gcd(a, b) {
+    while (b !== 0) {
+      let temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return a;
+  }
+  function lcm(a, b) {
+    return Math.abs(a * b) / gcd(a, b);
+  }
+  let num1 = parseInt(prompt("Введи перше двоцифрове число:"));
+  let num2 = parseInt(prompt("Введи друге двоцифрове число:"));
+  if (num1 >= 10 && num1 <= 99 && num2 >= 10 && num2 <= 99) {
+    let result = lcm(num1, num2);
+    alert("НСК чисел " + num1 + " і " + num2 + " дорівнює: " + result);
+  } else {
+    alert("Введи два двоцифрових натуральних числа.");
+  }
+    </script>
+</body>
+</html>

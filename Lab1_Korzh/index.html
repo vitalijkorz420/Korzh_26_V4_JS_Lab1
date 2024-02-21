@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Знайти остачу від ділення першої цифри на останню у заданому 5-ти цифровому натуральному числі.</title>
+</head>
+<body>
+    <script>
+         function findRemainder(number) {
+            if (number >= 10000 && number <= 99999) {
+                let first= parseInt(number.toString()[0]);
+                let last = parseInt(number.toString()[4]);
+                let remainder = first % last;
+                alert("Остача від ділення першої цифри на останню: " + remainder);
+            } else {
+                alert("Введене число не є 5-значним");
+            }
+        }
+        let x = prompt("Введи 5-значне число:");
+        let number = parseInt(x);
+        findRemainder(number);
+    </script>
+</body>
+</html>
